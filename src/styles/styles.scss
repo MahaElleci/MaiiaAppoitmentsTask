@@ -615,19 +615,39 @@ section {
 .appointment__form {
   display: flex;
   flex-direction: column;
-  form {
+  .form-wrapper {
     display: flex;
     flex-direction: column;
-    & > div:not(.cta) {
-      display: flex;
-      align-items: center;
-      min-height: 48px;
-      > label {
-        display: grid;
-        grid-template-columns: 150px 300px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    select {
+      padding: 1rem; 
+      padding-right: 2rem;
+      border: 1px solid #64c9c3;  
+      margin-bottom: 1.5rem; 
+      border-radius: 50px;
+      &:hover {
+        cursor: pointer;
+      } 
+      &:active, &:focus{
+        outline: none;
+      } 
+    } 
+    label {
+      margin-bottom: 0.5rem;
+    }
+    input {
+      background-color: #f68092;
+      color: #fff;
+      border: 2px solid #f68092;
+      border-radius: 100px;
+      padding: 4px 24px; 
+      &:hover {
+        cursor: pointer;
+        opacity: 0.9;
       }
     }
-
     ul {
       display: flex;
       justify-content: space-evenly;
