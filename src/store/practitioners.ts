@@ -5,6 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import config from 'config';
 import { Practitioner } from '.prisma/client';
+import { parseIds } from 'store/utils';
 
 const SERVER_API_ENDPOINT = config.get('SERVER_API_ENDPOINT', '/api');
 
@@ -13,7 +14,7 @@ export const getPractitioners = createAsyncThunk(
   async () => {
     const response = await fetch(`${SERVER_API_ENDPOINT}/practitioners`);
     const parsedResponse = await response.json();
-    return parsedResponse;
+    return parseIds(parsedResponse) as Practitioner[];
   },
 );
 

@@ -12,3 +12,9 @@ export const formatDateRange = (range: Range) => {
   const { from, to } = range;
   return `${formatDate(from)} ${formatTime(from)} - ${formatTime(to)}`;
 };
+
+export const prettifyDate = (date) => {
+  const splitFormDate = date.split('T');
+  const formattedDate = `Day: ${splitFormDate[0]}, Time: ${splitFormDate[1]}`;
+  return formattedDate;
+};

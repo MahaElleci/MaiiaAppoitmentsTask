@@ -620,29 +620,47 @@ section {
     flex-direction: column;
     max-width: 500px;
     margin: 0 auto;
-    margin-top: 2rem;
-    select {
-      padding: 1rem; 
-      padding-right: 2rem;
-      border: 1px solid #64c9c3;  
-      margin-bottom: 1.5rem; 
-      border-radius: 50px;
-      &:hover {
-        cursor: pointer;
-      } 
-      &:active, &:focus{
-        outline: none;
-      } 
-    } 
-    label {
-      margin-bottom: 0.5rem;
+    margin-top: 2rem;  
+    border: 1px solid #64c9c3;
+    border-radius: 50px; 
+    padding: 2rem; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    .MuiFormLabel-root {
+      margin-bottom: 0.5rem; 
+      font-size: 1.3rem;
+      color:#f68092; 
+      margin-top: 1rem;
+    }
+    .MuiFormControl-root {
+      .MuiFormLabel-root {
+        margin-bottom: 0.5rem; 
+        font-size: 1.3rem;
+        color:#64c9c3;
+      }
+      .MuiInput-underline {
+        padding-top: 1.5rem;
+        padding-right: 2rem;
+        margin-bottom: 1.5rem;
+        &:hover {
+          cursor: pointer;
+        }
+        &::before {
+          border-bottom: 1px solid #64c9c3;  
+          &:active,
+          &:focus {
+            outline: none;
+          } 
+        }
+      }
     }
     input {
       background-color: #f68092;
       color: #fff;
       border: 2px solid #f68092;
       border-radius: 100px;
-      padding: 4px 24px; 
+      padding: 5px 24px; 
+      max-width: 250px;
+      margin: 0 auto;
       &:hover {
         cursor: pointer;
         opacity: 0.9;
@@ -662,6 +680,22 @@ section {
   }
 }
 
+.appointment__list {
+  table {
+    width: 100%;
+    margin: 0 auto; 
+    margin-top: 2rem;
+    th {
+      text-align: center; 
+      color: #64c9c3;
+    } 
+    td {
+      text-align: center; 
+      padding: 1.2rem;
+    border-bottom: 1px solid rgb(168, 168, 168);
+    }
+  }
+}
 .timeSlots {
   display: flex;
   flex-wrap: wrap;

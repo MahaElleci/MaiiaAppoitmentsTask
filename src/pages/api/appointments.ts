@@ -4,7 +4,9 @@ import prisma from 'prisma/client';
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   switch (req.method) {
     case 'GET':
-      const appointments = await prisma.appointment.findMany();
+      const appointments = await prisma.appointment.findMany({
+        where: { patientId: +req.query.patientId },
+      });
       res.status(200).json(appointments);
       break;
     case 'POST':

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getPatients, patientsSelectors } from 'store/patients';
 import { getPractitioners, practionersSelector } from 'store/practitioners';
+
 const AppointmentsPage = () => {
   const dispatch = useDispatch();
   const patientsEntities = useSelector((state) =>
@@ -14,6 +15,8 @@ const AppointmentsPage = () => {
   const practionersEntities = useSelector((state) =>
     practionersSelector.selectAll(state.practitioners),
   );
+  const patientId = useSelector((state) => state.appointments.patientId);
+
   useEffect(() => {
     dispatch(getPatients());
     dispatch(getPractitioners());
@@ -69,7 +72,7 @@ const AppointmentsPage = () => {
           title="Appointment List"
           className="appointment__list"
         >
-          <AppointmentList />
+          {patientId && <AppointmentList />}
         </Section>
       </div>
     </div>
